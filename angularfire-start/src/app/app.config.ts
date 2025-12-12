@@ -12,14 +12,15 @@ import { getAnalytics, provideAnalytics, ScreenTrackingService, UserTrackingServ
 
 export const appConfig: ApplicationConfig = {
   providers: [
-    importProvidersFrom(
-      provideFirebaseApp(() => initializeApp(environment.firebase)),
-      provideFirestore(() => getFirestore()),
-      provideAuth(() => getAuth()),
-      provideFunctions(() => getFunctions()),
-      provideStorage(() => getStorage()),
-      provideMessaging(() => getMessaging())
-    ),
-    provideRouter(routes), provideFirebaseApp(() => initializeApp({"projectId":"friendlychat-6941c","appId":"1:775528725544:web:92e932d4db59d53f56c91d","storageBucket":"friendlychat-6941c.firebasestorage.app","apiKey":"AIzaSyBasp0VcPVUtIp-PAj67AsCqup3vBfbe3Q","authDomain":"friendlychat-6941c.firebaseapp.com","messagingSenderId":"775528725544","projectNumber":"775528725544","version":"2"})), provideAuth(() => getAuth()), provideAnalytics(() => getAnalytics()), ScreenTrackingService, UserTrackingService, provideFirestore(() => getFirestore()), provideMessaging(() => getMessaging()), provideStorage(() => getStorage())
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideFirestore(() => getFirestore()),
+    provideAuth(() => getAuth()),
+    provideFunctions(() => getFunctions()),
+    provideStorage(() => getStorage()),
+    provideMessaging(() => getMessaging()),
+    provideAnalytics(() => getAnalytics()),
+    ScreenTrackingService,
+    UserTrackingService,
+    provideRouter(routes)
   ],
 };
